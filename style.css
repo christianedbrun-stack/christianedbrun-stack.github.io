@@ -1,0 +1,166 @@
+/* style.css — Elegant Executive VA portfolio */
+:root{
+  --bg:#0f1720;
+  --accent:#b48e6a;
+  --muted:#93a0ab;
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --radius:14px;
+  --max-width:1100px;
+  --ff-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --ff-serif: 'Playfair Display', Georgia, serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--ff-sans);
+  color:#e6eef6;
+  background: linear-gradient(180deg,#061017 0%, #071823 60%);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+  font-size:16px;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.brand{font-family:var(--ff-serif);font-weight:600;color:#fff;text-decoration:none;font-size:1.15rem}
+.main-nav{display:flex;gap:1rem;align-items:center}
+.main-nav a{color:var(--muted);text-decoration:none;padding:0.4rem 0.5rem;border-radius:8px}
+.main-nav a:hover{color:#fff; background:var(--glass)}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#f1caa1);color:#062226;box-shadow:0 6px 20px rgba(180,142,106,0.12)}
+.btn-outline{border:1px solid rgba(230,238,246,0.06);color:var(--muted);background:transparent}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:1.4rem}
+.hero{padding:4rem 0;background:
+  radial-gradient(600px 300px at 90% 10%, rgba(180,142,106,0.06), transparent 10%),
+  linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:center}
+.hero-text h1{font-family:var(--ff-serif);font-weight:600;font-size:2.1rem;margin:0 0 0.5rem}
+.accent{color:var(--accent)}
+.lead{color:var(--muted);margin-bottom:1rem}
+.hero-card{background:linear-gradient(180deg,var(--glass),var(--glass-2));padding:1.25rem;border-radius:var(--radius);backdrop-filter: blur(6px);box-shadow:0 10px 30px rgba(2,6,10,0.6)}
+.stats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem}
+.stats li{display:flex;flex-direction:column;color:#fff}
+.stats li strong{font-size:1.25rem;color:var(--accent)}
+.section{padding:3rem 0}
+.section h2{font-family:var(--ff-serif);font-size:1.4rem;margin:0 0 0.5rem}
+.section-sub{color:var(--muted);margin-bottom:1.25rem}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.25rem;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,10,0.45)}
+.card h3{margin-top:0;color:#fff}
+.card p{color:var(--muted);margin-bottom:0}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.portfolio-item{border-radius:12px;overflow:hidden;background:#091219}
+.portfolio-item img{width:100%;height:160px;object-fit:cover;display:block}
+.portfolio-item figcaption{padding:0.75rem;color:var(--muted);background:linear-gradient(180deg,transparent,rgba(0,0,0,0.2))}
+.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.testimonial{background:var(--glass);padding:1rem;border-radius:12px;color:var(--muted)}
+.testimonial p{margin:0 0 0.5rem;font-style:italic}
+.about-grid{display:grid;grid-template-columns:1fr 320px;gap:1.5rem}
+.about-list{color:var(--muted);list-style:disc;margin-left:1rem}
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:1.5rem}
+.contact-form{display:flex;flex-direction:column;gap:0.75rem}
+.contact-form label{display:flex;flex-direction:column;color:var(--muted);font-size:0.95rem}
+.contact-form input, .contact-form textarea{margin-top:0.25rem;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff}
+.contact-card{padding:1rem;border-radius:12px;background:linear-gradient(180deg,var(--glass),var(--glass-2))}
+.site-footer{padding:1.25rem 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:2rem}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:0.95rem}
+@media (max-width:980px){
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-card{order:2}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  .container{padding:1rem}
+  .cards-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .main-nav.open{display:flex;position:absolute;right:1rem;top:68px;flex-direction:column;background:rgba(3,8,12,0.9);padding:1rem;border-radius:8px}
+  .brand{font-size:1rem}
+  .hero-text h1{font-size:1.6rem}
+}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+````markdown name=README.md
+# Christian Ed Brun — Executive Virtual Assistant — Website
+
+This repository contains a responsive one-page portfolio site plus a privacy page.
+
+Files:
+- `index.html` — main page
+- `style.css` — styling
+- `privacy.html` — privacy policy
+- Replace images and Formspree ID as needed.
+
+Quick local preview:
+1. Clone repo or download files.
+2. Open `index.html` in your browser (no server required).
+
+Step-by-step: create a new repository and publish with GitHub Pages
+1. Create a new GitHub repository
+   - If you want the site at `https://christianedbrun-stack.github.io/` name the repo exactly:
+     `christianedbrun-stack.github.io`
+   - Otherwise choose a repo name (the published URL will be `https://<username>.github.io/<repo>/`).
+
+2. Add files locally and commit
+   - On your machine, create a directory and copy the files into it.
+   - Run:
+     ```
+     git init
+     git add .
+     git commit -m "Initial site for Christian Ed Brun"
+     git branch -M main
+     git remote add origin git@github.com:<your-username>/<repo-name>.git
+     git push -u origin main
+     ```
+   - Replace `<your-username>` and `<repo-name>` with your GitHub username and repo name.
+
+3. Enable GitHub Pages (if needed)
+   - Visit: https://github.com/<your-username>/<repo-name>/settings/pages
+   - Under "Source", choose branch `main` and folder `/ (root)`, then Save.
+   - Wait ~1 minute. The page will show the published URL and build status.
+
+4. Confirm published URL
+   - If repo name is `christianedbrun-stack.github.io`, site URL will be:
+     `https://christianedbrun-stack.github.io/`
+   - If repo is named differently, URL will be:
+     `https://christianedbrun-stack.github.io/<repo-name>/`
+
+5. Replace Formspree contact form
+   - Create a Formspree form (https://formspree.io/) and copy the form ID.
+   - Replace the `action="https://formspree.io/f/{your-id}"` in `index.html` with the actual endpoint:
+     `action="https://formspree.io/f/your-id-here"`
+   - Alternatively use another form backend or remove the form and use only the mailto link.
+
+6. Replace portfolio images (optional)
+   - Add your images into the repo (e.g., `assets/img/`) and update the `<img src="...">` paths in `index.html`.
+   - Commit and push.
+
+7. (Optional) Use a custom domain
+   - Add a `CNAME` file at site root containing the domain (one line).
+   - Configure your DNS records per GitHub Pages docs.
+   - In repo Settings → Pages add the custom domain.
+
+Troubleshooting
+- If the page is unstyled or content looks wrong:
+  - Ensure `style.css` is present at the repo root.
+  - Ensure the HTML files are named exactly `index.html` and `privacy.html`.
+- If the contact form doesn't send:
+  - Replace the Formspree ID with a real one or test by submitting the form and watching your Formspree dashboard.
+- If mobile nav doesn't open:
+  - The JS provided uses a small-screen breakpoint (max-width: 680px). Make sure JS is not blocked by the browser.
+
+Want me to do it for you?
+- I can create the GitHub repo, push these files, rename the repo, and enable Pages if you grant me repository access or add me as a collaborator. Alternatively paste the repo name and I’ll provide the exact git commands to run locally.
+
+If you'd like, I can:
+- Replace the three portfolio images (paste URLs).
+- Replace the Formspree endpoint (paste the ID).
+- Add a downloadable services PDF (upload file or provide link).
+- Add simple analytics or a share/OG image.
