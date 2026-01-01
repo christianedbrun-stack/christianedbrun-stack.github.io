@@ -12,14 +12,11 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0;
-  font-family:var(--ff-sans);
-  color:#e6eef6;
-  background: linear-gradient(180deg,#061017 0%, #071823 60%);
-  -webkit-font-smoothing:antialiased;
-  line-height:1.5;
-  font-size:16px;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #0a1f44, #000c1f);
 }
 .container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
