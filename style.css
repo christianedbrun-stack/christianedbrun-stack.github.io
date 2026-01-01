@@ -36,40 +36,46 @@ body {
 .hero-text h1{font-family:var(--ff-serif);font-weight:600;font-size:2.1rem;margin:0 0 0.5rem}
 .accent{color:var(--accent)}
 .lead{color:var(--muted);margin-bottom:1rem}
-.hero-card{background:linear-gradient(180deg,var(--glass),var(--glass-2));padding:1.25rem;border-radius:var(--radius);backdrop-filter: blur(6px);box-shadow:0 10px 30px rgba(2,6,10,0.6)}
-.stats-section {
-  text-align: center;
-  padding: 60px 20px;
+/* Remove circular photo and use background instead */
+.hero-card-with-bg {
+  position: relative;
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  padding: 2rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(2, 6, 10, 0.6);
+  overflow: hidden;
 }
 
-.photo-wrapper {
-  margin-bottom: 30px;
+.photo-bg {
+  background-image: url('images/christian-photo.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(180, 142, 106, 0.3);
 }
 
-.profile-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #ff7a00; /* Orange accent */
-  box-shadow: 0 0 15px rgba(255, 122, 0, 0.4);
-}
 .photo-title {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-top: 1rem;
-  color: var(--accent);
+  color: var(--accent); /* gold tone */
+  margin-bottom: 2rem;
 }
+
+/* Move stats text upward slightly */
 .stats-grid {
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  margin-top: -10px;
 }
 
 .stat-box h3 {
   font-size: 36px;
-  color: #ff7a00;
+  color: var(--accent); /* gold tone */
   margin-bottom: 10px;
 }
 
