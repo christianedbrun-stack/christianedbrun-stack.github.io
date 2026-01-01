@@ -192,8 +192,18 @@
             <h3>Consultation</h3>
             <p>Free 20-minute discovery call to assess fit and priorities.</p>
 
-            <!-- Calendly inline widget (replace height if you need) -->
-            <div id="calendly-inline-widget" style="min-width:320px;height:560px;"></div>
+            <!-- Request Call button triggers Calendly popup -->
+            <a id="request-call-btn" class="btn btn-primary"
+               href="#"
+               role="button"
+               aria-label="Request a 20 minute consultation"
+               title="Request a 20 minute consultation">
+              Request Call
+            </a>
+
+            <p style="margin-top:.5rem;color:var(--muted);font-size:0.95rem;">
+              You’ll be asked to pick a time — a Google Meet link will be added automatically to the invite.
+            </p>
           </div>
 
           <div class="card contact-card">
@@ -250,13 +260,26 @@
     }());
   </script>
 
-  <!-- Calendly widget script (required for the inline widget) -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  <!-- Calendly popup script — place once before </body> -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script>
-    Calendly.initInlineWidget({
-      url: 'https://calendly.com/christianedbrun/20-min-consultation',
-      parentElement: document.getElementById('calendly-inline-widget')
-    });
+    (function () {
+      const calendlyUrl = 'https://calendly.com/christianedbrun/20-min-consultation';
+      const btn = document.getElementById('request-call-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Use Calendly's popup widget if available
+        if (window.Calendly && typeof Calendly.showPopupWidget === 'function') {
+          Calendly.showPopupWidget(calendlyUrl);
+        } else {
+          // Fallback: open Calendly in a new tab
+          window.open(calendlyUrl, '_blank', 'noopener');
+        }
+        return false;
+      });
+    }());
   </script>
 </body>
 </html>
